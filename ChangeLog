@@ -1,0 +1,143 @@
+2012-06-18 16:38 -0400  djerius  <djerius@cfa.harvard.edu>  (49c84e2280c6 [tip])
+
+	* Changes, README:
+	more cleanups from removal of CXC namespace
+
+2012-06-18 16:36 -0400  djerius  <djerius@cfa.harvard.edu>  (a5a2fac043f9)
+
+	* Makefile.PL:
+	update module metadata
+
+2012-06-18 16:25 -0400  djerius  <djerius@cfa.harvard.edu>  (1276edef0f86)
+
+	* lib/PDL/FuncND.pm: new file.
+	* lib/CXC/PDL/FuncND.pm: deleted file.
+	* Makefile.PL, lib/CXC/PDL/FuncND.pm, lib/PDL/FuncND.pm, t/00-load.t,
+	t/cauchyND.t, t/gaussND.t, t/mahalanobis.t:
+	remove leading CXC namespace
+
+2012-06-18 15:15 -0400  djerius  <djerius@cfa.harvard.edu>  (d3b690700148)
+
+	* Makefile.PL:
+	gotta have PDL for this to make sense
+
+2012-06-18 15:14 -0400  djerius  <djerius@cfa.harvard.edu>  (4e0968815b88)
+
+	* xt/perlcritic.t: new file.
+	* t/perlcritic.t: deleted file.
+	* Makefile.PL, t/perlcritic.t, xt/perlcritic.t:
+	move perlcritic to author tests
+
+2012-06-18 15:14 -0400  djerius  <djerius@cfa.harvard.edu>  (53313c730495)
+
+	* t/cauchyND.t: new file.
+	* t/cauchyND.t:
+	tests for cauchyND
+
+2012-06-18 15:13 -0400  djerius  <djerius@cfa.harvard.edu>  (088e9e4340aa)
+
+	* lib/CXC/PDL/FuncND.pm:
+	code format fixes
+
+2012-06-18 15:12 -0400  djerius  <djerius@cfa.harvard.edu>  (9e432a96e98e)
+
+	* cauchy.wxm: new file.
+	* cauchy.wxm, lib/CXC/PDL/FuncND.pm:
+	add cauchyND function
+
+2012-06-18 15:09 -0400  djerius  <djerius@cfa.harvard.edu>  (a606a06e79f0)
+
+	* lib/CXC/PDL/FuncND.pm:
+	simplify theta rotation code by applying rotation to final scale
+	matrix
+
+2012-06-12 17:13 -0400  djerius  <djerius@cfa.harvard.edu>  (a341f32f3860)
+
+	* t/gaussND.t:
+	de-duplicate code
+
+2012-06-12 13:01 -0400  djerius  <djerius@cfa.harvard.edu>  (ed03bf6c84da)
+
+	* lib/CXC/PDL/FuncND.pm:
+	move options processing into separate routine
+
+	The interface to most (if not all) *ND routines should be the same
+	whenever possible. Move the options processing into its own
+	routine.
+
+	* rename cov (for covariance matrix) to scale, to more generically
+	reflect what it stands for
+
+2011-02-01 10:54 -0500  djerius  <djerius@cfa.harvard.edu>  (1d0f33cb5471)
+
+	* .hgtags:
+	Added tag 0.04 for changeset 36925f47285f
+
+2011-02-01 10:54 -0500  djerius  <djerius@cfa.harvard.edu>  (36925f47285f [0.04])
+
+	* ChangeLog, Changes, lib/CXC/PDL/FuncND.pm:
+	update version and logs for release
+
+2011-02-01 10:48 -0500  djerius  <djerius@cfa.harvard.edu>  (696110c54abc)
+
+	* t/mahalanobis.t:
+	exact equals in test failed on 32 bit box; use approximate equals
+
+2010-02-26 16:24 -0500  djerius  <djerius@cfa.harvard.edu>  (9b0bbda016e6)
+
+	* ChangeLog: new file.
+	* ChangeLog, Changes:
+	update changes for release
+
+2010-02-26 16:23 -0500  djerius  <djerius@cfa.harvard.edu>  (bb26c5b583bc)
+
+	* .hgtags:
+	Added tag 0.03 for changeset 7ebc6e68b52a
+
+2010-02-26 16:00 -0500  djerius  <djerius@cfa.harvard.edu>  (7ebc6e68b52a [0.03])
+
+	* lib/CXC/PDL/FuncND.pm:
+	quiet perldl when passing guassND just dimensions
+
+	For some reason the test for a piddle as the first argument is
+	causing loud warnings:
+
+	 Can't call method "isa" without a package or object reference
+
+	under perldl if it's not a piddle. Does perldl have a special
+	$SIG{__DIE__} handler? which outputs $@?
+
+2010-02-26 11:28 -0500  djerius  <djerius@cfa.harvard.edu>  (c4da4b39ddb5)
+
+	* lib/CXC/PDL/FuncND.pm, t/gaussND.t:
+	default center is always the origin. BUG FIX: auto center is now in
+	transformed space.
+
+	previously the default center was the origin for vectors, the center
+	of the grid for grids. it's now always the origin. centering on the
+	grid is now accomplished by specifying center => 'auto'.
+
+	the auto center was previously not transformed along with the grid
+	coordinates. it is now.
+
+2010-02-26 10:59 -0500  djerius  <djerius@cfa.harvard.edu>  (d51afc34b9f4)
+
+	* lib/CXC/PDL/FuncND.pm:
+	line formatting changes
+
+2010-02-25 17:50 -0500  djerius  <djerius@cfa.harvard.edu>  (8ff8a634c933)
+
+	* .hgtags: new file.
+	* .hgtags:
+	Added tag 0.01 for changeset 902f19ab4c48
+
+2010-02-25 17:50 -0500  djerius  <djerius@cfa.harvard.edu>  (902f19ab4c48 [0.01])
+
+	* 2DGauss.wxm, Changes, MANIFEST.SKIP, Makefile.PL, README,
+	lib/CXC/PDL/FuncND.pm, t/00-load.t, t/gaussND.t, t/mahalanobis.t,
+	t/perlcritic.t, t/pod-coverage.t, t/pod.t: new file.
+	* 2DGauss.wxm, Changes, MANIFEST.SKIP, Makefile.PL, README,
+	lib/CXC/PDL/FuncND.pm, t/00-load.t, t/gaussND.t, t/mahalanobis.t,
+	t/perlcritic.t, t/pod-coverage.t, t/pod.t:
+	initial import
+
