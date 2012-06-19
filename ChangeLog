@@ -1,4 +1,35 @@
-2012-06-18 16:38 -0400  djerius  <djerius@cfa.harvard.edu>  (49c84e2280c6 [tip])
+2012-06-19 11:49 -0400  djerius  <djerius@cfa.harvard.edu>  (1d20d9d0d2d1 [tip])
+
+	* t/lorentzND.t:
+	reformat code
+
+2012-06-19 11:25 -0400  djerius  <djerius@cfa.harvard.edu>  (75fba7eb864a)
+
+	* t/lorentzND.t: new file.
+	* lib/PDL/FuncND.pm, t/lorentzND.t:
+	added lorentzND function
+
+2012-06-18 16:52 -0400  djerius  <djerius@cfa.harvard.edu>  (17943ef035b2)
+
+	* lib/PDL/FuncND.pm:
+	mark as RC prior to initial upload to CPAN so it doesn't get indexed
+
+2012-06-18 16:51 -0400  djerius  <djerius@cfa.harvard.edu>  (98f9e1ad5f7d)
+
+	* Makefile.PL:
+	fix repo URL; BitBucket lowercases things
+
+2012-06-18 16:48 -0400  djerius  <djerius@cfa.harvard.edu>  (dab4a3c4a41a)
+
+	* .hgtags:
+	Added tag 0.05 for changeset f2da17f98055
+
+2012-06-18 16:48 -0400  djerius  <djerius@cfa.harvard.edu>  (f2da17f98055 [0.05])
+
+	* ChangeLog, Changes:
+	update logs for release
+
+2012-06-18 16:38 -0400  djerius  <djerius@cfa.harvard.edu>  (49c84e2280c6)
 
 	* Changes, README:
 	more cleanups from removal of CXC namespace

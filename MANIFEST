@@ -15,6 +15,7 @@ inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/PDL/FuncND.pm
+lorentz.wxm
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
@@ -25,6 +26,7 @@ README
 t/00-load.t
 t/cauchyND.t
 t/gaussND.t
+t/lorentzND.t
 t/mahalanobis.t
 t/pod-coverage.t
 t/pod.t

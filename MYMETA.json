@@ -47,8 +47,8 @@
          "http://opensource.org/licenses/gpl-3.0.html"
       ],
       "repository" : {
-         "url" : "http://bitbucket.org/djerius/PDL-FuncND"
+         "url" : "http://bitbucket.org/djerius/pdl-funcnd"
       }
    },
-   "version" : "0.05"
+   "version" : "0.06"
 }

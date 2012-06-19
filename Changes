@@ -1,18 +1,29 @@
 Revision history for PDL-FuncND
 
+0.05_02     Tue Jun 19 11:25:36 EDT 2012
+
+[ENHANCEMENT]
+
+* added LorentzND function
+
+
 0.05 	 Mon Jun 18 16:41:35 EDT 2012
 
-       * Add cauchyND
-       * move to main PDL namespace
+[ENHANCEMENT]
+* added cauchyND
+
+
+* move to main PDL namespace
 
 0.04 Tue Feb  1 10:49:08 EST 2011
 
-       * minor fix in test suite.
+* minor fix in test suite.
 
 0.03
-       * default center is always the origin.
-       * BUG FIX: auto center is now in transformed space.
+
+* default center is always the origin.
+* BUG FIX: auto center is now in transformed space.
 
 0.01
-       Initial release.
+Initial release.
 

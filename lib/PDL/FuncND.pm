@@ -39,6 +39,7 @@ our @EXPORT_OK = qw[
 		       mahalanobis
 		       cauchyND
 		       gaussND
+		       lorentzND
 		  ];
 
 our %EXPORT_TAGS = (Func     => [@EXPORT_OK],
@@ -47,7 +48,7 @@ our %EXPORT_TAGS = (Func     => [@EXPORT_OK],
 # bizarre spurious errors are being thrown by this policy
 ## no critic (ProhibitAccessOfPrivateData)
 
-our $VERSION = '0.05_01';
+our $VERSION = '0.06';
 
 =head1 NAME
 
@@ -563,6 +564,221 @@ sub gaussND {
 }
 
 *PDL::gaussND = \&gaussND;
+
+
+=pod
+
+=head2 lorentzND
+
+=for ref
+
+Evaluate the multi-dimensional Lorentz function on an
+N-dimensional grid or at a set of locations.
+
+=for usage
+
+  $f = lorentzND( [OPTIONAL TYPE], $nx, $ny, ..., \%options );
+  $f = lorentzND( $piddle, \%options );
+  lorentzND( inplace $piddle, \%options );
+  $a->inplace->lorentzND( \%options );
+
+
+The Lorentz function is usually defined in one dimension as.
+
+                       2
+                      g
+  f(x; x0, g) = --------------
+                       2    2
+                (x - x0)  + g
+
+
+where I<g> is the half-width at half-max (HWHM).  The two dimensional
+symmetric analogue (sometimes called the "radial Lorentz
+function") is
+
+                                    2
+                                   g
+  f(x, y; x0, y0, g) = --------------------------
+                               2           2    2
+                       (x - x0)  + (y - y0)  + g
+
+
+One can extend this to an asymmetric form by writing it as
+
+                            1
+  f(x; u, S) = ---------------------------
+                      T    -1
+               (x - u)  . S  . (x - u) + 1
+
+where I<x> is now a vector, I<u> is the expectation value of the
+distribution, and I<S> is a matrix describing the N-dimensional scale
+of the distribution akin to (but not the same as!) a covariance matrix.
+
+For example, a symmetric 2D Lorentz with HWHM of I<g> has
+
+       [  2     ]
+       [ g   0  ]
+  S =  [        ]
+       [      2 ]
+       [ 0   g  ]
+
+while an elliptical distribution elongated twice as much along the
+I<X> axis as the I<Y> axis would be:
+
+       [     2      ]
+       [ (2*g)   0  ]
+  S =  [            ]
+       [          2 ]
+       [ 0       g  ]
+
+
+B<lorentzND> extends the Lorentz function to N dimensions by treating
+I<x> and I<u> as vectors of length I<N>, and I<S> as an I<NxN> matrix.
+
+It can evaluate the function either on a grid or at discrete
+locations:
+
+=over
+
+=item * evaluation on a grid
+
+Either specify the output piddle dimensions explicitly,
+
+  $f = lorentzND( [ OPTIONAL TYPE], $nx, $ny, ..., \%options );
+
+or specify a template piddle I<without> specifying the C<vectors>
+option:
+
+  $f = lorentzND( $piddle, \%options );
+
+By default B<lorentzND> will evaluate the function at the I<indices> of
+the points in the input piddle.  These may be mapped to other values
+by specifying a transform with the C<transform> option.  B<lorentzND> is
+inplace aware, and will use B<$piddle> as the output piddle if its
+inplace flag is set.
+
+  lorentzND( inplace $f, \%options );
+  $f->inplace->lorentzND( \%options );
+
+=item * evaluation at a set of locations
+
+The input piddle should represent a set of vectors and should have a
+shape of (N,m), where C<m> is the number of vectors in the set. The
+C<vectors> option must also be set:
+
+  $piddle = pdl( [2,1], [3,1], [4,2]  );
+  $f = lorentzND( $piddle, { vectors => 1 } );
+
+The vectors may be transformed before use via the C<transform> option.
+
+=back
+
+The following options are available:
+
+=over
+
+=item C<center> | C<centre>
+
+The center of the distribution.  If not specified it defaults to the
+origin.
+
+This may take one of the following values:
+
+=over
+
+=item * A vector of shape (N).
+
+The location of the center. This may be either a Perl arrayref or a
+one dimensional piddle.  If the input coordinates are transformed,
+this is in the I<transformed> space.
+
+=item * the string C<auto>
+
+If the PDF is calculated on a grid, this will center the distribution on
+the grid. It is an error to use this for explicit locations.
+
+=back
+
+=item C<transform>
+
+A PDL::Transform object to be applied to the input coordinates.
+
+=item C<scale>
+
+The scale. If the input coordinates are transformed
+via the C<transform> option, the units of scale are those in the
+I<transformed> space.  This may be specified as:
+
+=over
+
+=item * a scalar (Perl or piddle)
+
+This results in a symmetric distribution with the given scale along each
+coordinate.
+
+=item * a vector of shape (N) (piddle or Perl arrayref)
+
+This results in a distribution with the specified scales for each
+coordinate.
+
+=item * a matrix (piddle of shape (N,N))
+
+This should be a positive-definite matrix containing squared
+scales.
+
+=back
+
+=item C<theta> (Perl scalar)
+
+B<Only for 2D!> Applies a rotation (clockwise, e.g. +X
+rotates towards -Y) by the specified angle (specified in radians).
+
+=back
+
+=cut
+
+sub lorentzND {
+
+    # handle being called as a method or a function
+    my $self = eval { ref $_[0] && $_[0]->isa( 'PDL' ) } ? shift @_ : 'PDL';
+
+    # handle options.
+    my $opt = 'HASH' eq ref $_[-1] ? pop( @_ ) : {};
+    my %opt = iparse( { center    => undef,
+			scale     => 1,
+			transform => undef,
+			vectors   => 0,
+			theta     => undef,
+		      }, $opt );
+
+    my %par = _handle_options( $self, \%opt, @_ );
+
+    my $d2 = mahalanobis( $par{vectors}, $par{scale},
+			{ squared => 1,
+			  ( defined $par{center} ? (center => $par{center}) : () )
+			});
+    my $f = 1/ ( 1 + $d2 );
+
+    my $retval = $f;
+
+    my $output = $par{output};
+
+    if ( $opt{vectors} )
+    {
+	$output = $retval;
+    }
+
+    else
+    {
+	$output .= $retval->reshape( $output->dims );
+    }
+
+    return $output;
+}
+
+*PDL::lorentzND = \&lorentzND;
+
+
 
 =pod
 
