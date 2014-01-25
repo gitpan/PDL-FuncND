@@ -1,5 +1,11 @@
 Revision history for PDL-FuncND
 
+0.08     Sat Jan 25 11:30:27 EST 2014
+
+[PACKAGING]
+
+  * forgot to update the detailed ChangeLog in the distribution
+
 0.07     Wed Mar 13 10:31:59 EDT 2013
 
 [ENHANCEMENT]

@@ -1,4 +1,461 @@
-2012-06-19 11:49 -0400  djerius  <djerius@cfa.harvard.edu>  (1d20d9d0d2d1 [tip])
+2014-01-25 11:32 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (2bbc93d4e546 [tip])
+
+	* .hgtags:
+	Added tag 0.08 for changeset 974f90b9c2b3
+
+2014-01-25 11:32 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (974f90b9c2b3 [0.08])
+
+	* Changes, lib/PDL/FuncND.pm:
+	bump version for packaging fix
+
+2014-01-25 11:29 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (e39cd75639e8)
+
+	* ChangeLog: deleted file.
+	* ChangeLog:
+	ChangeLog is a derived product; don't track
+
+2014-01-25 11:21 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (7ed068bcbe9d)
+
+	* .hgtags:
+	Added tag 0.07 for changeset bb65867485f9
+
+2014-01-25 11:20 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (bb65867485f9 [0.07])
+
+	* Changes, lib/PDL/FuncND.pm:
+	update logs and version for release
+
+2014-01-25 11:19 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (5fb48f744e75)
+
+	* MANIFEST.SKIP:
+	cleanup manifest a bit
+
+2014-01-25 11:18 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (d24e6851f144)
+
+	* Makefile.PL:
+	recursively search for tests
+
+2014-01-25 11:10 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (d9189e5ece5c)
+
+	* lib/PDL/FuncND.pm:
+	incorporate fixes from CHM (RT#88857)
+
+2014-01-25 11:00 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (6dd7d2c49d8e)
+
+	* lib/PDL/FuncND.pod:
+	update docs
+
+2013-03-15 16:27 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (561e8844b0f0)
+
+	* lib/PDL/FuncND.pm:
+	remove silly normalization brought inserted during period of sleep
+	depraved
+
+2013-03-15 16:09 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (b6ff26d19982)
+
+	* lib/PDL/FuncND.pm, support/moffat/2dcode.wxm,
+	support/moffat/pretty.wxm, t/01-funcs/moffatND.t:
+	wrong definition of moffatND. alpha *is* the scale, not an
+	additional scale
+
+	wow. that was so wrong. back to remedial math. the use of the
+	scaling matrix S is the whole point of using mahalanobis, so
+	stuffing alpha in there as an additional scalling parameter was just
+	so wrong. fixed, I hope.
+
+	in test, generate normalizations directly instead of using values
+	from maxima.
+
+2013-03-15 11:03 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (6c9e3af4a092)
+
+	* lib/PDL/FuncND.pm:
+	minor code cleanup
+
+2013-03-15 11:03 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (e1768e7390b2)
+
+	* lib/PDL/FuncND.pm:
+	return more info about the parameters used to generate the function
+	when called in list context
+
+2013-03-15 11:02 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (3d7cb9a2081d)
+
+	* lib/PDL/FuncND.pm:
+	allow specialization of function normalization
+
+2013-03-15 11:01 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (671dca2374c2)
+
+	* lib/PDL/FuncND.pm:
+	bug in PDL::Core::topdl broke offset with list of coords
+
+2013-03-14 18:32 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (b0ad43b2d478)
+
+	* lib/PDL/FuncND.pm:
+	bug fix: incorrect calculation of number of vectors in input list
+
+2013-03-14 18:16 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (b1fe1c23b0ba)
+
+	* lib/PDL/FuncND.pm, t/02-api/single.t:
+	bug fix: more fixes for singular vectors
+
+2013-03-14 17:16 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (20b320159f26)
+
+	* t/02-api/single.t: new file.
+	* lib/PDL/FuncND.pm, t/02-api/single.t:
+	bug fix: mahalonbis() incorrectly handled bare single vector
+
+2013-03-14 17:11 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (da20dc8174dc)
+
+	* lib/PDL/FuncND.pm:
+	minor fix: removed unused code
+
+2013-03-14 17:10 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (e8fcdbba0f9d)
+
+	* lib/PDL/FuncND.pm:
+	switch from barf to croak to get better error source localization
+
+2013-03-14 15:46 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (1d4b498e63a5)
+
+	* t/02-api/center.t:
+	fix misunderstanding of Test::Trap return_ok and die_ok methods
+
+2013-03-14 14:35 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (d7f35d0f2126)
+
+	* lib/PDL/FuncND.pm:
+	consolidate duplicate code into _genericND so can control API and
+	return
+
+2013-03-14 14:33 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (598d1f6ffbb2)
+
+	* lib/PDL/FuncND.pm:
+	minor code formatting
+
+2013-03-14 12:01 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (7bc14c99866f)
+
+	* lib/PDL/FuncND.pm:
+	minor code simplification
+
+2013-03-13 22:59 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (1897c1b3995e)
+
+	* t/02-api/center.t: new file.
+	* t/02-api/center.t:
+	add API tests for center parameter
+
+2013-03-13 22:58 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (50ba2d67f868)
+
+	* lib/PDL/FuncND.pm:
+	add center => [ offset => @offset ] to ease offset positioning
+
+2013-03-13 22:04 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (14887f20e8d2)
+
+	* t/01-funcs/cauchyND.t, t/01-funcs/gaussND.t, t/01-funcs/lorentzND.t,
+	t/01-funcs/mahalanobis.t, t/01-funcs/moffatND.t: new file.
+	* t/cauchyND.t, t/gaussND.t, t/lorentzND.t, t/mahalanobis.t,
+	t/moffatND.t: deleted file.
+	* t/01-funcs/cauchyND.t, t/01-funcs/gaussND.t, t/01-funcs/lorentzND.t,
+	t/01-funcs/mahalanobis.t, t/01-funcs/moffatND.t, t/cauchyND.t,
+	t/gaussND.t, t/lorentzND.t, t/mahalanobis.t, t/moffatND.t:
+	move function tests to sequenced subdir
+
+2013-03-13 16:07 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (327e2fd1d75a)
+
+	* lib/PDL/FuncND.pm:
+	only compare the center to a string if it's not a piddle (reference)
+
+2013-03-13 16:06 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (d4a8e1b84fb7)
+
+	* lib/PDL/FuncND.pm:
+	only specify default center in grid mode, not vector mode
+
+2013-03-13 14:58 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (d351f93cbe1b)
+
+	* lib/PDL/FuncND.pm:
+	force default center to origin in API handler rather than relying
+	upon mihalonobis
+
+2013-03-13 14:43 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (2bd77d6e0b4a)
+
+	* lib/PDL/FuncND.pm:
+	let scale default to 1
+
+2013-03-13 10:31 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (9669ed0b5da6)
+
+	* xt/pod-coverage.t, xt/pod.t: new file.
+	* t/pod-coverage.t, t/pod.t: deleted file.
+	* t/pod-coverage.t, t/pod.t, xt/pod-coverage.t, xt/pod.t:
+	move pod tests to author tests
+
+2013-03-13 10:30 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (8a92aa71ff83)
+
+	* t/cauchyND.t, t/lorentzND.t, t/mahalanobis.t, t/moffatND.t:
+	make remainder of tests' grid sizes follow $N; up N to 99
+
+2013-03-09 10:04 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (f2cabb78718c)
+
+	* lib/PDL/FuncND.pod, support/cauchy/cauchy.html,
+	support/cauchy/cauchy.wxm, support/cauchy/cauchy_img/cauchy_0.png,
+	support/cauchy/cauchy_img/cauchy_1.png,
+	support/cauchy/cauchy_img/cauchy_2.png, support/gauss/2DGauss.html,
+	support/gauss/2DGauss.wxm, support/gauss/2DGauss_img/2DGauss_0.png,
+	support/gauss/2DGauss_img/2DGauss_1.png,
+	support/gauss/2DGauss_img/2DGauss_10.png,
+	support/gauss/2DGauss_img/2DGauss_11.png,
+	support/gauss/2DGauss_img/2DGauss_12.png,
+	support/gauss/2DGauss_img/2DGauss_13.png,
+	support/gauss/2DGauss_img/2DGauss_14.png,
+	support/gauss/2DGauss_img/2DGauss_15.png,
+	support/gauss/2DGauss_img/2DGauss_2.png,
+	support/gauss/2DGauss_img/2DGauss_3.png,
+	support/gauss/2DGauss_img/2DGauss_4.png,
+	support/gauss/2DGauss_img/2DGauss_5.png,
+	support/gauss/2DGauss_img/2DGauss_6.png,
+	support/gauss/2DGauss_img/2DGauss_7.png,
+	support/gauss/2DGauss_img/2DGauss_8.png,
+	support/gauss/2DGauss_img/2DGauss_9.png,
+	support/lorentz/lorentz.html, support/lorentz/lorentz.wxm,
+	support/lorentz/lorentz_img/lorentz_0.png,
+	support/lorentz/lorentz_img/lorentz_1.png,
+	support/lorentz/lorentz_img/lorentz_2.png,
+	support/lorentz/lorentz_img/lorentz_3.png,
+	support/lorentz/lorentz_img/lorentz_4.png,
+	support/moffat/2dcode.wxm, support/moffat/moffat2.html,
+	support/moffat/moffat2.wxm,
+	support/moffat/moffat2_img/moffat2_0.png,
+	support/moffat/moffat2_img/moffat2_1.png,
+	support/moffat/moffat2_img/moffat2_10.png,
+	support/moffat/moffat2_img/moffat2_2.png,
+	support/moffat/moffat2_img/moffat2_3.png,
+	support/moffat/moffat2_img/moffat2_4.png,
+	support/moffat/moffat2_img/moffat2_5.png,
+	support/moffat/moffat2_img/moffat2_6.png,
+	support/moffat/moffat2_img/moffat2_7.png,
+	support/moffat/moffat2_img/moffat2_8.png,
+	support/moffat/moffat2_img/moffat2_9.png,
+	support/moffat/moffat3.html, support/moffat/moffat3.wxm,
+	support/moffat/moffat3_img/moffat3_0.png,
+	support/moffat/moffat3_img/moffat3_1.png,
+	support/moffat/moffat3_img/moffat3_10.png,
+	support/moffat/moffat3_img/moffat3_11.png,
+	support/moffat/moffat3_img/moffat3_12.png,
+	support/moffat/moffat3_img/moffat3_13.png,
+	support/moffat/moffat3_img/moffat3_14.png,
+	support/moffat/moffat3_img/moffat3_15.png,
+	support/moffat/moffat3_img/moffat3_2.png,
+	support/moffat/moffat3_img/moffat3_3.png,
+	support/moffat/moffat3_img/moffat3_4.png,
+	support/moffat/moffat3_img/moffat3_5.png,
+	support/moffat/moffat3_img/moffat3_6.png,
+	support/moffat/moffat3_img/moffat3_7.png,
+	support/moffat/moffat3_img/moffat3_8.png,
+	support/moffat/moffat3_img/moffat3_9.png,
+	support/moffat/moffat4.html, support/moffat/moffat4.wxm,
+	support/moffat/moffat4_img/moffat4_0.png,
+	support/moffat/moffat4_img/moffat4_1.png,
+	support/moffat/moffat4_img/moffat4_10.png,
+	support/moffat/moffat4_img/moffat4_11.png,
+	support/moffat/moffat4_img/moffat4_12.png,
+	support/moffat/moffat4_img/moffat4_13.png,
+	support/moffat/moffat4_img/moffat4_14.png,
+	support/moffat/moffat4_img/moffat4_15.png,
+	support/moffat/moffat4_img/moffat4_16.png,
+	support/moffat/moffat4_img/moffat4_17.png,
+	support/moffat/moffat4_img/moffat4_18.png,
+	support/moffat/moffat4_img/moffat4_19.png,
+	support/moffat/moffat4_img/moffat4_2.png,
+	support/moffat/moffat4_img/moffat4_20.png,
+	support/moffat/moffat4_img/moffat4_3.png,
+	support/moffat/moffat4_img/moffat4_4.png,
+	support/moffat/moffat4_img/moffat4_5.png,
+	support/moffat/moffat4_img/moffat4_6.png,
+	support/moffat/moffat4_img/moffat4_7.png,
+	support/moffat/moffat4_img/moffat4_8.png,
+	support/moffat/moffat4_img/moffat4_9.png,
+	support/moffat/moffat5.html, support/moffat/moffat5.wxm,
+	support/moffat/moffat5_img/moffat5_0.png,
+	support/moffat/moffat5_img/moffat5_1.png,
+	support/moffat/moffat5_img/moffat5_10.png,
+	support/moffat/moffat5_img/moffat5_11.png,
+	support/moffat/moffat5_img/moffat5_12.png,
+	support/moffat/moffat5_img/moffat5_13.png,
+	support/moffat/moffat5_img/moffat5_14.png,
+	support/moffat/moffat5_img/moffat5_15.png,
+	support/moffat/moffat5_img/moffat5_16.png,
+	support/moffat/moffat5_img/moffat5_17.png,
+	support/moffat/moffat5_img/moffat5_18.png,
+	support/moffat/moffat5_img/moffat5_19.png,
+	support/moffat/moffat5_img/moffat5_2.png,
+	support/moffat/moffat5_img/moffat5_20.png,
+	support/moffat/moffat5_img/moffat5_21.png,
+	support/moffat/moffat5_img/moffat5_22.png,
+	support/moffat/moffat5_img/moffat5_23.png,
+	support/moffat/moffat5_img/moffat5_24.png,
+	support/moffat/moffat5_img/moffat5_25.png,
+	support/moffat/moffat5_img/moffat5_3.png,
+	support/moffat/moffat5_img/moffat5_4.png,
+	support/moffat/moffat5_img/moffat5_5.png,
+	support/moffat/moffat5_img/moffat5_6.png,
+	support/moffat/moffat5_img/moffat5_7.png,
+	support/moffat/moffat5_img/moffat5_8.png,
+	support/moffat/moffat5_img/moffat5_9.png,
+	support/moffat/normalize.html, support/moffat/normalize.wxm,
+	support/moffat/normalize_img/normalize_0.png,
+	support/moffat/normalize_img/normalize_1.png,
+	support/moffat/normalize_img/normalize_2.png,
+	support/moffat/normalize_img/normalize_3.png,
+	support/moffat/normalize_img/normalize_4.png,
+	support/moffat/normalize_img/normalize_5.png,
+	support/moffat/normalize_img/normalize_6.png,
+	support/moffat/normalize_img/normalize_7.png,
+	support/moffat/pretty.wxm, t/moffatND.t: new file.
+	* 2DGauss.wxm, cauchy.wxm, lorentz.wxm: deleted file.
+	* 2DGauss.wxm, cauchy.wxm, lib/PDL/FuncND.pm, lib/PDL/FuncND.pod,
+	lorentz.wxm, support/cauchy/cauchy.html, support/cauchy/cauchy.wxm,
+	support/cauchy/cauchy_img/cauchy_0.png,
+	support/cauchy/cauchy_img/cauchy_1.png,
+	support/cauchy/cauchy_img/cauchy_2.png, support/gauss/2DGauss.html,
+	support/gauss/2DGauss.wxm, support/gauss/2DGauss_img/2DGauss_0.png,
+	support/gauss/2DGauss_img/2DGauss_1.png,
+	support/gauss/2DGauss_img/2DGauss_10.png,
+	support/gauss/2DGauss_img/2DGauss_11.png,
+	support/gauss/2DGauss_img/2DGauss_12.png,
+	support/gauss/2DGauss_img/2DGauss_13.png,
+	support/gauss/2DGauss_img/2DGauss_14.png,
+	support/gauss/2DGauss_img/2DGauss_15.png,
+	support/gauss/2DGauss_img/2DGauss_2.png,
+	support/gauss/2DGauss_img/2DGauss_3.png,
+	support/gauss/2DGauss_img/2DGauss_4.png,
+	support/gauss/2DGauss_img/2DGauss_5.png,
+	support/gauss/2DGauss_img/2DGauss_6.png,
+	support/gauss/2DGauss_img/2DGauss_7.png,
+	support/gauss/2DGauss_img/2DGauss_8.png,
+	support/gauss/2DGauss_img/2DGauss_9.png,
+	support/lorentz/lorentz.html, support/lorentz/lorentz.wxm,
+	support/lorentz/lorentz_img/lorentz_0.png,
+	support/lorentz/lorentz_img/lorentz_1.png,
+	support/lorentz/lorentz_img/lorentz_2.png,
+	support/lorentz/lorentz_img/lorentz_3.png,
+	support/lorentz/lorentz_img/lorentz_4.png,
+	support/moffat/2dcode.wxm, support/moffat/moffat2.html,
+	support/moffat/moffat2.wxm,
+	support/moffat/moffat2_img/moffat2_0.png,
+	support/moffat/moffat2_img/moffat2_1.png,
+	support/moffat/moffat2_img/moffat2_10.png,
+	support/moffat/moffat2_img/moffat2_2.png,
+	support/moffat/moffat2_img/moffat2_3.png,
+	support/moffat/moffat2_img/moffat2_4.png,
+	support/moffat/moffat2_img/moffat2_5.png,
+	support/moffat/moffat2_img/moffat2_6.png,
+	support/moffat/moffat2_img/moffat2_7.png,
+	support/moffat/moffat2_img/moffat2_8.png,
+	support/moffat/moffat2_img/moffat2_9.png,
+	support/moffat/moffat3.html, support/moffat/moffat3.wxm,
+	support/moffat/moffat3_img/moffat3_0.png,
+	support/moffat/moffat3_img/moffat3_1.png,
+	support/moffat/moffat3_img/moffat3_10.png,
+	support/moffat/moffat3_img/moffat3_11.png,
+	support/moffat/moffat3_img/moffat3_12.png,
+	support/moffat/moffat3_img/moffat3_13.png,
+	support/moffat/moffat3_img/moffat3_14.png,
+	support/moffat/moffat3_img/moffat3_15.png,
+	support/moffat/moffat3_img/moffat3_2.png,
+	support/moffat/moffat3_img/moffat3_3.png,
+	support/moffat/moffat3_img/moffat3_4.png,
+	support/moffat/moffat3_img/moffat3_5.png,
+	support/moffat/moffat3_img/moffat3_6.png,
+	support/moffat/moffat3_img/moffat3_7.png,
+	support/moffat/moffat3_img/moffat3_8.png,
+	support/moffat/moffat3_img/moffat3_9.png,
+	support/moffat/moffat4.html, support/moffat/moffat4.wxm,
+	support/moffat/moffat4_img/moffat4_0.png,
+	support/moffat/moffat4_img/moffat4_1.png,
+	support/moffat/moffat4_img/moffat4_10.png,
+	support/moffat/moffat4_img/moffat4_11.png,
+	support/moffat/moffat4_img/moffat4_12.png,
+	support/moffat/moffat4_img/moffat4_13.png,
+	support/moffat/moffat4_img/moffat4_14.png,
+	support/moffat/moffat4_img/moffat4_15.png,
+	support/moffat/moffat4_img/moffat4_16.png,
+	support/moffat/moffat4_img/moffat4_17.png,
+	support/moffat/moffat4_img/moffat4_18.png,
+	support/moffat/moffat4_img/moffat4_19.png,
+	support/moffat/moffat4_img/moffat4_2.png,
+	support/moffat/moffat4_img/moffat4_20.png,
+	support/moffat/moffat4_img/moffat4_3.png,
+	support/moffat/moffat4_img/moffat4_4.png,
+	support/moffat/moffat4_img/moffat4_5.png,
+	support/moffat/moffat4_img/moffat4_6.png,
+	support/moffat/moffat4_img/moffat4_7.png,
+	support/moffat/moffat4_img/moffat4_8.png,
+	support/moffat/moffat4_img/moffat4_9.png,
+	support/moffat/moffat5.html, support/moffat/moffat5.wxm,
+	support/moffat/moffat5_img/moffat5_0.png,
+	support/moffat/moffat5_img/moffat5_1.png,
+	support/moffat/moffat5_img/moffat5_10.png,
+	support/moffat/moffat5_img/moffat5_11.png,
+	support/moffat/moffat5_img/moffat5_12.png,
+	support/moffat/moffat5_img/moffat5_13.png,
+	support/moffat/moffat5_img/moffat5_14.png,
+	support/moffat/moffat5_img/moffat5_15.png,
+	support/moffat/moffat5_img/moffat5_16.png,
+	support/moffat/moffat5_img/moffat5_17.png,
+	support/moffat/moffat5_img/moffat5_18.png,
+	support/moffat/moffat5_img/moffat5_19.png,
+	support/moffat/moffat5_img/moffat5_2.png,
+	support/moffat/moffat5_img/moffat5_20.png,
+	support/moffat/moffat5_img/moffat5_21.png,
+	support/moffat/moffat5_img/moffat5_22.png,
+	support/moffat/moffat5_img/moffat5_23.png,
+	support/moffat/moffat5_img/moffat5_24.png,
+	support/moffat/moffat5_img/moffat5_25.png,
+	support/moffat/moffat5_img/moffat5_3.png,
+	support/moffat/moffat5_img/moffat5_4.png,
+	support/moffat/moffat5_img/moffat5_5.png,
+	support/moffat/moffat5_img/moffat5_6.png,
+	support/moffat/moffat5_img/moffat5_7.png,
+	support/moffat/moffat5_img/moffat5_8.png,
+	support/moffat/moffat5_img/moffat5_9.png,
+	support/moffat/normalize.html, support/moffat/normalize.wxm,
+	support/moffat/normalize_img/normalize_0.png,
+	support/moffat/normalize_img/normalize_1.png,
+	support/moffat/normalize_img/normalize_2.png,
+	support/moffat/normalize_img/normalize_3.png,
+	support/moffat/normalize_img/normalize_4.png,
+	support/moffat/normalize_img/normalize_5.png,
+	support/moffat/normalize_img/normalize_6.png,
+	support/moffat/normalize_img/normalize_7.png,
+	support/moffat/pretty.wxm, t/moffatND.t:
+	add moffat; split docs out from code; organize maxima support code
+
+2013-03-09 10:02 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (9f6f5fa651b9)
+
+	* MANIFEST.SKIP:
+	update to new version
+
+2013-03-09 10:00 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (79f9250a48c0)
+
+	* t/lorentzND.t:
+	simplify code so it's more readable
+
+2012-06-19 17:50 -0400  djerius  <djerius@cfa.harvard.edu>  (ec8923f4afed)
+
+	* t/gaussND.t:
+	make grid sizes follow $N
+
+2012-06-19 11:52 -0400  djerius  <djerius@cfa.harvard.edu>  (7f45b018d80f)
+
+	* .hgtags:
+	Added tag 0.06 for changeset 34aef6070cc0
+
+2012-06-19 11:52 -0400  djerius  <djerius@cfa.harvard.edu>  (34aef6070cc0 [0.06])
+
+	* ChangeLog, Changes, lib/PDL/FuncND.pm:
+	update logs and version for release
+
+2012-06-19 11:49 -0400  djerius  <djerius@cfa.harvard.edu>  (7ff0134210f3)
+
+	* lorentz.wxm: new file.
+	* lorentz.wxm:
+	add wxmaxima input for lorentzND
+
+2012-06-19 11:49 -0400  djerius  <djerius@cfa.harvard.edu>  (1d20d9d0d2d1)
 
 	* t/lorentzND.t:
 	reformat code
@@ -93,8 +550,7 @@
 	move options processing into separate routine
 
 	The interface to most (if not all) *ND routines should be the same
-	whenever possible. Move the options processing into its own
-	routine.
+	whenever possible. Move the options processing into its own routine.
 
 	* rename cov (for covariance matrix) to scale, to more generically
 	reflect what it stands for
