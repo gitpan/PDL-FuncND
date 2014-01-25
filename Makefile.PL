@@ -13,6 +13,8 @@ requires 'PDL';
 
 build_requires 'Test::More';
 
+tests_recursive;
+
 repository 'http://bitbucket.org/djerius/pdl-funcnd';
 bugtracker 'https://rt.cpan.org/Public/Dist/Display.html?Name=PDL-FuncND';
 
