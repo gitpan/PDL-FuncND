@@ -1,5 +1,11 @@
 Revision history for PDL-FuncND
 
+0.09     Sun Jan 26 22:15:05 EST 2014
+
+[BUILD]
+
+  * add missing test requirement on Test::Trap
+
 0.08     Sat Jan 25 11:30:27 EST 2014
 
 [PACKAGING]

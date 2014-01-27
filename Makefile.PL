@@ -11,7 +11,8 @@ all_from 'lib/PDL/FuncND.pm';
 
 requires 'PDL';
 
-build_requires 'Test::More';
+test_requires 'Test::More';
+test_requires 'Test::Trap';
 
 tests_recursive;
 

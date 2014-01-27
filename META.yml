@@ -5,6 +5,7 @@ author:
 build_requires:
   ExtUtils::MakeMaker: 6.36
   Test::More: 0
+  Test::Trap: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.36
 distribution_type: module
@@ -26,4 +27,4 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=PDL-FuncND
   license: http://opensource.org/licenses/gpl-3.0.html
   repository: http://bitbucket.org/djerius/pdl-funcnd
-version: 0.08
+version: 0.09

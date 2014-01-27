@@ -1,4 +1,19 @@
-2014-01-25 11:32 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (2bbc93d4e546 [tip])
+2014-01-26 22:20 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (1afffc8ec313 [tip])
+
+	* .hgtags:
+	Added tag 0.09 for changeset abcfa3fae5b5
+
+2014-01-26 22:20 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (abcfa3fae5b5 [0.09])
+
+	* Changes, lib/PDL/FuncND.pm:
+	update version and log for release
+
+2014-01-26 22:13 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (41e295ac84a4)
+
+	* Makefile.PL:
+	update test requirements
+
+2014-01-25 11:32 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (2bbc93d4e546)
 
 	* .hgtags:
 	Added tag 0.08 for changeset 974f90b9c2b3
