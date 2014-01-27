@@ -36,20 +36,20 @@ our $N = 99;
     my $cov = identity( 2 );
     my $d0 = rvals( $N, $N, { center => [1.2, 2.2], squared => 1 } );
 
-    ok( all ( approx( $d0,
-		      t2d( $cov, opts => { center => [ 1.2, 2.2 ] } ),
-		      2e-14
-		    ),
-	    ),
-	"identity, [1.2, 2.2]" );
+    my $got = t2d( $cov, opts => { center => [ 1.2, 2.2 ] } );
+    ok( all ( approx( $d0, $got, 2e-14) ),
+	"identity, [1.2, 2.2]" )
+      or diag( "min, max diff (exp-got): ",
+		join( ', ', ($d0 -$got)->minmax),
+		"\n" );
 
-    ok( all ( approx( $d0,
-		      t2d( $cov, opts => { center => pdl([ 1.2, 2.2 ]) } ),
-		      2e-14
-		    ),
-	    ),
-	"identity, pdl [1.2,2.2]"
-      );
+    $got = t2d( $cov, opts => { center => pdl([ 1.2, 2.2 ]) } ),
+    ok( all ( approx( $d0, $got, 2e-14),),
+	"identity, pdl [1.2, 2.2]"
+      )
+      or diag( "min, max diff (exp-got): ",
+		join( ', ', ($d0 -$got)->minmax),
+		"\n" );
 }
 
 # flip covariance; d = 2 * x * y.  this is not a true covariance matrix; just checking that the code works

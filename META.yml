@@ -27,4 +27,4 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=PDL-FuncND
   license: http://opensource.org/licenses/gpl-3.0.html
   repository: http://bitbucket.org/djerius/pdl-funcnd
-version: 0.09
+version: 0.09_01
