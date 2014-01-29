@@ -51,7 +51,7 @@ our %EXPORT_TAGS = ( Func => [@EXPORT_OK], );
 # bizarre spurious errors are being thrown by this policy
 ## no critic (ProhibitAccessOfPrivateData)
 
-our $VERSION = '0.09_01';
+our $VERSION = '0.09_02';
 
 # keep option handling uniform.  barf if there's a problem
 sub _handle_options {

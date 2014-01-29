@@ -1,4 +1,35 @@
-2014-01-26 22:20 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (1afffc8ec313 [tip])
+2014-01-29 12:06 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (641fc60e42f2 [tip])
+
+	* .hgtags:
+	Added tag 0.09_02 for changeset 6eeba2c80a5b
+
+2014-01-29 12:05 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (6eeba2c80a5b [0.09_02])
+
+	* Changes, lib/PDL/FuncND.pm:
+	update logs and version for release
+
+2014-01-29 12:04 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (abdc6613cb73)
+
+	* xt/pod-coverage.t: deleted file.
+	* xt/pod-coverage.t:
+	Test::Pod::Coverage doesn't handle docs in .pod and not in .pm
+
+2014-01-29 11:49 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (03d509a6150d)
+
+	* t/01-funcs/mahalanobis.t:
+	increase epsilon to pass tests on OpenBSD 5.4 32bit boxes
+
+2014-01-27 11:57 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (c206fab780fe)
+
+	* Changes, lib/PDL/FuncND.pm:
+	update log and version for release
+
+2014-01-27 11:51 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (34796d8cfa85)
+
+	* t/01-funcs/mahalanobis.t:
+	add diagnostics to understand failure on 32bit boxes
+
+2014-01-26 22:20 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (1afffc8ec313)
 
 	* .hgtags:
 	Added tag 0.09 for changeset abcfa3fae5b5

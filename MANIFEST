@@ -151,5 +151,4 @@ t/01-funcs/moffatND.t
 t/02-api/center.t
 t/02-api/single.t
 xt/perlcritic.t
-xt/pod-coverage.t
 xt/pod.t

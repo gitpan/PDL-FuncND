@@ -1,5 +1,12 @@
 Revision history for PDL-FuncND
 
+0.09_02 Wed Jan 29 11:50:55 EST 2014
+
+[TEST FIX]
+
+  * tweak epsilon in mahalonobis test to pass on OpenBSD 5.4 32 bit
+    boxes
+
 0.09_01     Mon Jan 27 11:56:03 EST 2014
 
 [DEBUG]
