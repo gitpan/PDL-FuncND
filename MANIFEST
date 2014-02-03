@@ -2,6 +2,7 @@ ChangeLog
 Changes
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
+inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm
 inc/Module/Install/AutoInstall.pm
 inc/Module/Install/Base.pm
@@ -150,5 +151,6 @@ t/01-funcs/mahalanobis.t
 t/01-funcs/moffatND.t
 t/02-api/center.t
 t/02-api/single.t
+xt/changes.t
 xt/perlcritic.t
 xt/pod.t

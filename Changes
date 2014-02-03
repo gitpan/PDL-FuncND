@@ -1,69 +1,78 @@
 Revision history for PDL-FuncND
 
-0.09_02 Wed Jan 29 11:50:55 EST 2014
+0.10   2014-02-03T12:18:47-0500
 
-[TEST FIX]
+  * promote to stable version
+
+ [BUILD]
+
+  * Make Changes CPAN::Changes::Spec compatible and add test
+
+0.09_02 2014-01-29T16:50:55Z
+
+ [TEST FIX]
 
   * tweak epsilon in mahalonobis test to pass on OpenBSD 5.4 32 bit
     boxes
 
-0.09_01     Mon Jan 27 11:56:03 EST 2014
+0.09_01 2014-01-27T16:56:03Z
 
-[DEBUG]
+ [DEBUG]
 
   * add diagnostics to debug failure on 32bit boxes
 
 
-[BUILD]
+ [BUILD]
 
   * add missing test requirement on Test::Trap
 
-0.09     Sun Jan 26 22:15:05 EST 2014
+0.09  2014-01-27T03:15:05Z
 
-[BUILD]
+ [BUILD]
 
   * add missing test requirement on Test::Trap
 
-0.08     Sat Jan 25 11:30:27 EST 2014
+0.08  2014-01-25T16:30:27Z
 
-[PACKAGING]
+ [PACKAGING]
 
   * forgot to update the detailed ChangeLog in the distribution
 
-0.07     Wed Mar 13 10:31:59 EDT 2013
+0.07  2013-03-13T14:31:59Z
 
-[ENHANCEMENT]
+ [ENHANCEMENT]
 
   * now provides the Moffat distribution
 
-0.06     Tue Jun 19 11:52:30 2012 -0400
+0.06  2012-06-19T15:25:36Z
 
   * Production release, no changes
 
-0.05_02  Tue Jun 19 11:25:36 EDT 2012
+0.05_02 2012-06-19T11:52:30Z
 
-[ENHANCEMENT]
+ [ENHANCEMENT]
 
   * added LorentzND function
 
 
-0.05     Mon Jun 18 16:41:35 EDT 2012
+0.05  2012-06-18T20:41:35Z
 
-[ENHANCEMENT]
+ [ENHANCEMENT]
 
   * added cauchyND
 
   * move to main PDL namespace
 
-0.04 Tue Feb  1 10:49:08 EST 2011
+0.04 2011-02-01T15:49:08Z
 
   * minor fix in test suite.
 
-0.03
+0.03 2010-02-26T16:00:16Z
 
   * default center is always the origin.
   * BUG FIX: auto center is now in transformed space.
 
-0.01
-Initial release.
+0.01 2010-02-25T17:50:33Z
+
+  * Initial release.
 

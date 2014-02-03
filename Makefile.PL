@@ -20,7 +20,7 @@ repository 'http://bitbucket.org/djerius/pdl-funcnd';
 bugtracker 'https://rt.cpan.org/Public/Dist/Display.html?Name=PDL-FuncND';
 
 author_tests('xt');
-
+author_requires 'Test::CPAN::Changes';
 auto_install;
 
 WriteAll;
