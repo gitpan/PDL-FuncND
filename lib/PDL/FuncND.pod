@@ -342,6 +342,13 @@ I<X> axis as the I<Y> axis would be:
 B<lorentzND> extends the Lorentz function to N dimensions by treating
 I<x> and I<u> as vectors of length I<N>, and I<S> as an I<NxN> matrix.
 
+B<Please note!> While the one dimensional Lorentz function is
+equivalent to the one-dimensional Cauchy (aprt from, in this
+formulation, the normalization constant), this formulation of the
+multi-dimensional Lorentz function is B<not> equivalent to the
+multi-dimensional Cauchy!
+
+
 It can evaluate the function either on a grid or at discrete
 locations:
 
@@ -470,7 +477,7 @@ The Moffat distribution is usually defined in two dimensions as.
 In astronomy this is also known (confusingly) as the beta function, and is
 often expressed in radial form:
 
-                                              2
+                                               2
                         2 r (beta - 1)        r    -beta
   fr(r, alpha, beta) := -------------- (1 + ------)
                                  2               2
@@ -480,11 +487,11 @@ One can extend the Cartesion expression to an n-dimensional asymmetric
 form by writing it as
 
   fn(x, u, S, alpha, beta) :=
-                                                       T   -1
-       gamma(beta)        n/2      n   -1       (x - u) . S . (x - u)  -beta
-    ----------------- ( pi    alpha   )    (1 + ----------------------)
-          2 beta - n                                       2
-    gamma(----------)                                 alpha
+
+       gamma(beta)        n/2    1/2  -1              T   -1         -beta
+    ----------------- ( pi    |S|    )    (1 + (x - u) . S . (x - u))
+          2 beta - n
+    gamma(----------)
               2
 
 where I<n> is the number of dimensions, I<x> is now a vector, I<u> is
@@ -538,6 +545,10 @@ The vectors may be transformed before use via the C<transform> option.
 The following options are available:
 
 =over
+
+=item C<beta>
+
+The Moffat I<beta> parameter. Required.
 
 =item C<center> | C<centre>
 

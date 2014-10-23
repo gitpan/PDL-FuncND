@@ -1,5 +1,13 @@
 Revision history for PDL-FuncND
 
+0.11   2014-10-23T17:41:48-0400
+
+ [DOCUMENTATION]
+
+  * document moffatND beta parameter
+  * fix moffatND expression; alpha is actually absorbed into S
+  * indicate that lorentzND is not the same as cauchyND
+
 0.10   2014-02-03T12:18:47-0500
 
   * promote to stable version

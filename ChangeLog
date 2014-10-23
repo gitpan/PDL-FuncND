@@ -1,4 +1,88 @@
-2014-01-25 11:32 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (2bbc93d4e546 [tip])
+2014-10-23 17:48 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (6045eaa78232 [tip])
+
+	* Changes, lib/PDL/FuncND.pm:
+	update logs and version for release
+
+2014-10-23 17:46 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (6707bde8ac51)
+
+	* lib/PDL/FuncND.pod:
+	moffatND doc fix: document beta param; absorb alpha into S in
+	equation
+
+	* The moffatND function requires a beta parameter; indicate that
+
+	* The documented expression for the moffatND function incorrectly
+	showed alpha as a separate parameter; it is actually absorbed in the
+	scale parameter.
+
+2014-10-23 17:44 -0400  Diab Jerius  <djerius@cfa.harvard.edu>  (ea67d1fcdbb5)
+
+	* lib/PDL/FuncND.pod:
+	document that lorentzND is not equivalent to cauchyND
+
+2014-02-03 12:22 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (7cf6b1365f7b)
+
+	* .hgtags:
+	Added tag 0.10 for changeset e64376e57429
+
+2014-02-03 12:22 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (e64376e57429 [0.10])
+
+	* Changes, lib/PDL/FuncND.pm:
+	update logs and version for release
+
+2014-02-03 12:21 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (f7ea46aea0ea)
+
+	* xt/changes.t: new file.
+	* Changes, Makefile.PL, xt/changes.t:
+	Make Changes CPAN::Changes::Spec compatible and add test
+
+2014-01-29 12:06 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (641fc60e42f2)
+
+	* .hgtags:
+	Added tag 0.09_02 for changeset 6eeba2c80a5b
+
+2014-01-29 12:05 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (6eeba2c80a5b [0.09_02])
+
+	* Changes, lib/PDL/FuncND.pm:
+	update logs and version for release
+
+2014-01-29 12:04 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (abdc6613cb73)
+
+	* xt/pod-coverage.t: deleted file.
+	* xt/pod-coverage.t:
+	Test::Pod::Coverage doesn't handle docs in .pod and not in .pm
+
+2014-01-29 11:49 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (03d509a6150d)
+
+	* t/01-funcs/mahalanobis.t:
+	increase epsilon to pass tests on OpenBSD 5.4 32bit boxes
+
+2014-01-27 11:57 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (c206fab780fe)
+
+	* Changes, lib/PDL/FuncND.pm:
+	update log and version for release
+
+2014-01-27 11:51 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (34796d8cfa85)
+
+	* t/01-funcs/mahalanobis.t:
+	add diagnostics to understand failure on 32bit boxes
+
+2014-01-26 22:20 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (1afffc8ec313)
+
+	* .hgtags:
+	Added tag 0.09 for changeset abcfa3fae5b5
+
+2014-01-26 22:20 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (abcfa3fae5b5 [0.09])
+
+	* Changes, lib/PDL/FuncND.pm:
+	update version and log for release
+
+2014-01-26 22:13 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (41e295ac84a4)
+
+	* Makefile.PL:
+	update test requirements
+
+2014-01-25 11:32 -0500  Diab Jerius  <djerius@cfa.harvard.edu>  (2bbc93d4e546)
 
 	* .hgtags:
 	Added tag 0.08 for changeset 974f90b9c2b3
